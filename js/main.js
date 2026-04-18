@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     imgs.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.className = 'product-card__dot' + (i === 0 ? ' product-card__dot--active' : '');
+      dot.setAttribute('aria-label', `Фото ${i + 1}`);
       dot.addEventListener('click', () => goTo(i));
       dotsContainer.appendChild(dot);
     });
@@ -74,6 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.addEventListener('touchend', e => {
       const diff = startX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-    });
+    }, { passive: true });
   });
 });
