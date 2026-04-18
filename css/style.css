@@ -376,3 +376,29 @@ section:not(.hero) { padding: var(--section-padding); }
   padding-top: 4px;
   border-top: 1px solid var(--color-border);
 }
+
+/* ── ADVANTAGES ──────────────────────────────────────────────── */
+.advantages { background: var(--color-white); }
+
+.advantages__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .advantages__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.advantages__item {
+  background: var(--color-bg);
+  border-radius: 12px;
+  padding: 24px 20px;
+  border: 1px solid var(--color-border);
+}
+
+.advantages__icon { font-size: 2rem; display: block; margin-bottom: 12px; }
+
+.advantages__item h3 { font-size: 1rem; margin-bottom: 8px; }
+.advantages__item p { font-size: 0.875rem; margin: 0; }
