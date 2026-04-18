@@ -100,7 +100,7 @@ section:not(.hero) { padding: var(--section-padding); }
   background: rgba(250, 248, 244, 0.95);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  border: 3px solid var(--color-accent);
+  border: 2px solid var(--color-accent);
 }
 
 .site-header__inner {
