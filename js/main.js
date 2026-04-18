@@ -108,7 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // populate level 2 links
     vkBtn.href = cfg.vk;
     tgBtn.href = cfg.telegram + '?text=' + cfg.message;
-    waBtn.href = 'https://wa.me/' + cfg.whatsapp.replace(/\D/g, '') + '?text=' + cfg.message;
+    const waPhone = cfg.whatsapp.replace(/\D/g, '');
+    waBtn.href = waPhone ? 'https://wa.me/' + waPhone + '?text=' + cfg.message : '#';
 
     vkBtn.onclick = () => trackEvent('buy_vk_' + productKey);
     tgBtn.onclick = () => trackEvent('buy_tg_' + productKey);
