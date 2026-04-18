@@ -209,3 +209,45 @@ section:not(.hero) { padding: var(--section-padding); }
 
   .hero__subtitle { margin-left: 0; margin-right: 0; }
 }
+
+/* ── ABOUT ───────────────────────────────────────────────────── */
+.about { background: var(--color-white); }
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about__photo {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
+.about__facts {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about__fact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.about__fact-icon { font-size: 1.2rem; }
+
+@media (min-width: 768px) {
+  .about__inner { grid-template-columns: 340px 1fr; }
+  .about__photo { max-width: 100%; margin: 0; }
+}
