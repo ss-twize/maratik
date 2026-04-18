@@ -38,4 +38,42 @@ function trackEvent(name) {
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Maratik ready');
+
+  // ─── SLIDERS ─────────────────────────────────────────────────────────────────
+  document.querySelectorAll('[data-slider]').forEach(slider => {
+    const slides = slider.querySelector('.product-card__slides');
+    const imgs = slides.querySelectorAll('img');
+    const dotsContainer = slider.querySelector('.product-card__dots');
+    let current = 0;
+    const total = imgs.length;
+
+    // build dots
+    imgs.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'product-card__dot' + (i === 0 ? ' product-card__dot--active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      slides.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.product-card__dot').forEach((d, i) => {
+        d.classList.toggle('product-card__dot--active', i === current);
+      });
+    }
+
+    slider.querySelector('.product-card__slider-btn--prev')
+      .addEventListener('click', () => goTo(current - 1));
+    slider.querySelector('.product-card__slider-btn--next')
+      .addEventListener('click', () => goTo(current + 1));
+
+    // touch swipe
+    let startX = 0;
+    slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+  });
 });
