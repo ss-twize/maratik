@@ -670,3 +670,26 @@ section:not(.hero) { padding: var(--section-padding); }
 .popup__btn-tg:hover  { background: #1A8EC2; }
 .popup__btn-wa  { background: #25D366; }
 .popup__btn-wa:hover  { background: #1DAE52; }
+
+/* ── MOBILE FINAL PASS ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  :root { --section-padding: 52px 20px; }
+
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.4rem; }
+
+  .advantages__grid { grid-template-columns: 1fr; }
+
+  .catalog__grid { gap: 20px; }
+
+  .product-card__price { font-size: 1.25rem; }
+
+  .popup { padding: 28px 20px 36px; }
+}
+
+/* Ensure tap targets are at least 44px */
+button, a, summary { min-height: 44px; }
+.product-card__dot { min-height: unset; }
+
+/* Smooth scroll offset for sticky header */
+[id] { scroll-margin-top: 72px; }
