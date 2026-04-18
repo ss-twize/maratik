@@ -307,6 +307,38 @@
     </div>
   </div>
 </footer>
+  <!-- BUY POPUP -->
+<div class="popup-overlay" id="buyPopup" role="dialog" aria-modal="true" aria-label="Купить товар" hidden>
+  <div class="popup">
+    <button class="popup__close" id="popupClose" aria-label="Закрыть">&#10005;</button>
+
+    <!-- Level 1 -->
+    <div class="popup__level" id="popupLevel1">
+      <h3 class="popup__title">Как хотите заказать?</h3>
+      <p class="popup__subtitle" id="popupProductName"></p>
+      <div class="popup__actions">
+        <button class="btn popup__btn-avito" id="popupAvitoBtn">
+          Заказать на Авито
+        </button>
+        <button class="btn btn--ghost popup__btn-manager" id="popupManagerBtn">
+          Заказать через менеджера
+        </button>
+      </div>
+    </div>
+
+    <!-- Level 2 -->
+    <div class="popup__level popup__level--hidden" id="popupLevel2">
+      <button class="popup__back" id="popupBack">&#8592; Назад</button>
+      <h3 class="popup__title">Выберите мессенджер</h3>
+      <p class="popup__subtitle">Мы ответим и поможем оформить заказ</p>
+      <div class="popup__actions popup__actions--column">
+        <a class="btn popup__btn-vk" id="popupVkBtn" target="_blank" rel="noopener">ВКонтакте</a>
+        <a class="btn popup__btn-tg" id="popupTgBtn" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn popup__btn-wa" id="popupWaBtn" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
   <script src="js/main.js"></script>
 </body>
 </html>

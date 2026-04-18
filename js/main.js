@@ -77,4 +77,78 @@ document.addEventListener('DOMContentLoaded', () => {
       if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
     }, { passive: true });
   });
+
+  // ─── POPUP ───────────────────────────────────────────────────────────────────
+  const popup        = document.getElementById('buyPopup');
+  const level1       = document.getElementById('popupLevel1');
+  const level2       = document.getElementById('popupLevel2');
+  const productLabel = document.getElementById('popupProductName');
+  const avitoBtn     = document.getElementById('popupAvitoBtn');
+  const vkBtn        = document.getElementById('popupVkBtn');
+  const tgBtn        = document.getElementById('popupTgBtn');
+  const waBtn        = document.getElementById('popupWaBtn');
+
+  const PRODUCT_NAMES = {
+    boots_high: 'Высокие сапоги',
+    boots_low:  'Низкие сапоги',
+    crocs:      'Кроксы'
+  };
+
+  function openPopup(productKey) {
+    const cfg = LINKS[productKey];
+    if (!cfg) return;
+
+    // populate level 1
+    productLabel.textContent = PRODUCT_NAMES[productKey] || '';
+    avitoBtn.onclick = () => {
+      trackEvent('buy_avito_' + productKey);
+      window.open(cfg.avito, '_blank', 'noopener');
+    };
+
+    // populate level 2 links
+    vkBtn.href = cfg.vk;
+    tgBtn.href = cfg.telegram + '?text=' + cfg.message;
+    waBtn.href = 'https://wa.me/' + cfg.whatsapp.replace(/\D/g, '') + '?text=' + cfg.message;
+
+    vkBtn.onclick = () => trackEvent('buy_vk_' + productKey);
+    tgBtn.onclick = () => trackEvent('buy_tg_' + productKey);
+    waBtn.onclick = () => trackEvent('buy_wa_' + productKey);
+
+    // show popup at level 1
+    level1.classList.remove('popup__level--hidden');
+    level2.classList.add('popup__level--hidden');
+    popup.hidden = false;
+    document.body.style.overflow = 'hidden';
+    trackEvent('popup_open_' + productKey);
+  }
+
+  function closePopup() {
+    popup.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  // open from any [data-buy] button
+  document.querySelectorAll('[data-buy]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.product || 'boots_high';
+      openPopup(key);
+    });
+  });
+
+  // manager branch
+  document.getElementById('popupManagerBtn').addEventListener('click', () => {
+    level1.classList.add('popup__level--hidden');
+    level2.classList.remove('popup__level--hidden');
+  });
+
+  // back
+  document.getElementById('popupBack').addEventListener('click', () => {
+    level2.classList.add('popup__level--hidden');
+    level1.classList.remove('popup__level--hidden');
+  });
+
+  // close
+  document.getElementById('popupClose').addEventListener('click', closePopup);
+  popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
 });

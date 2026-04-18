@@ -574,3 +574,97 @@ section:not(.hero) { padding: var(--section-padding); }
 .site-footer__legal { display: flex; flex-direction: column; gap: 8px; }
 
 .site-footer__copy { font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.4); }
+
+/* ── POPUP ───────────────────────────────────────────────────── */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  animation: fadeIn 0.2s ease;
+}
+
+@media (min-width: 520px) {
+  .popup-overlay { align-items: center; padding: 24px; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.popup {
+  background: var(--color-white);
+  border-radius: 16px 16px 0 0;
+  padding: 32px 24px 40px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  animation: slideUp 0.25s ease;
+}
+
+@media (min-width: 520px) {
+  .popup { border-radius: 16px; padding: 40px 36px; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.popup__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.popup__close:hover { background: var(--color-bg); }
+
+.popup__title { margin-bottom: 6px; font-size: 1.2rem; }
+
+.popup__subtitle { font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 24px; }
+
+.popup__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup__level--hidden { display: none; }
+
+.popup__back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.popup__btn-vk  { background: #0077FF; }
+.popup__btn-vk:hover  { background: #005FCC; }
+.popup__btn-tg  { background: #27A7E7; }
+.popup__btn-tg:hover  { background: #1A8EC2; }
+.popup__btn-wa  { background: #25D366; }
+.popup__btn-wa:hover  { background: #1DAE52; }
