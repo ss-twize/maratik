@@ -120,14 +120,20 @@ section:not(.hero) { padding: var(--section-padding); }
 
 .site-header__nav {
   display: flex;
+  align-items: center;
   gap: 24px;
   margin-left: auto;
+  height: 100%;
 }
 
 .site-header__nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-text-secondary);
+  line-height: 1;
   transition: color 0.2s;
 }
 
@@ -137,6 +143,7 @@ section:not(.hero) { padding: var(--section-padding); }
   padding: 10px 22px;
   font-size: 0.9rem;
   flex-shrink: 0;
+  align-self: center;
 }
 
 @media (max-width: 768px) {
