@@ -80,7 +80,7 @@ p { color: var(--color-text-secondary); margin-bottom: 12px; }
   color: #fff;
 }
 
-section { padding: var(--section-padding); }
+section:not(.hero) { padding: var(--section-padding); }
 
 .section-label {
   font-size: 0.75rem;
