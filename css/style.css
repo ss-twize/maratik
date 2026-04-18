@@ -245,7 +245,7 @@ section:not(.hero) { padding: var(--section-padding); }
   color: var(--color-text);
 }
 
-.about__fact-icon { font-size: 1.2rem; }
+.about__fact-icon { font-size: 1.2rem; flex-shrink: 0; }
 
 @media (min-width: 768px) {
   .about__inner { grid-template-columns: 340px 1fr; }
