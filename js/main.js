@@ -26,11 +26,13 @@ const LINKS = {
   }
 };
 
-// ─── ANALYTICS STUB ──────────────────────────────────────────────────────────
-// Connect Yandex.Metrika counter in <head>, then ym() calls below will work.
+// ─── ANALYTICS CONFIG ────────────────────────────────────────────────────────
+// Replace with your Yandex.Metrika counter ID before going live.
+const YM_COUNTER = 0; // TODO: replace 0 with real counter ID
+
 function trackEvent(name) {
-  if (typeof ym === 'function') {
-    ym(0, 'reachGoal', name); // replace 0 with your counter ID
+  if (typeof ym === 'function' && YM_COUNTER !== 0) {
+    ym(YM_COUNTER, 'reachGoal', name);
   }
 }
 
