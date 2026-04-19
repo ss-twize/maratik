@@ -215,22 +215,6 @@ section:not(.hero) { padding: var(--section-padding); }
   min-height: unset;
 }
 
-.hero__photo-card {
-  margin: 0 auto 22px;
-  max-width: 260px;
-  border: 2px solid var(--color-accent);
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--color-white);
-  box-shadow: var(--shadow);
-}
-
-.hero__photo {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .hero__cta { min-width: 220px; }
 
 @media (min-width: 900px) {
@@ -257,7 +241,6 @@ section:not(.hero) { padding: var(--section-padding); }
 
   .hero__subtitle { margin-left: 0; margin-right: 0; }
   .hero__badges { justify-content: flex-start; }
-  .hero__photo-card { margin-left: 0; margin-right: 0; }
 }
 
 /* ── ABOUT ───────────────────────────────────────────────────── */
