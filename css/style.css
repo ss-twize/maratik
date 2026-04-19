@@ -189,13 +189,11 @@ section:not(.hero) { padding: var(--section-padding); }
 
 .hero__title {
   margin-bottom: 16px;
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1.06;
-  max-width: 16ch;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  font-size: clamp(1.65rem, 5.2vw, 4rem);
+  line-height: 1.08;
+  max-width: 18ch;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .hero__subtitle {
@@ -699,6 +697,10 @@ section:not(.hero) { padding: var(--section-padding); }
   :root { --section-padding: 52px 20px; }
 
   h1 { font-size: 1.85rem; }
+  .hero__title {
+    font-size: clamp(1.45rem, 8.8vw, 2.1rem);
+    max-width: 20ch;
+  }
   h2 { font-size: 1.4rem; }
 
   .advantages__grid { grid-template-columns: 1fr; }
