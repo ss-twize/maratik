@@ -27,8 +27,7 @@ const LINKS = {
 };
 
 // ─── ANALYTICS CONFIG ────────────────────────────────────────────────────────
-// Replace with your Yandex.Metrika counter ID before going live.
-const YM_COUNTER = 0; // TODO: replace 0 with real counter ID
+const YM_COUNTER = 108666198;
 
 function trackEvent(name) {
   if (typeof ym === 'function' && YM_COUNTER !== 0) {
