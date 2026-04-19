@@ -187,7 +187,16 @@ section:not(.hero) { padding: var(--section-padding); }
   text-align: center;
 }
 
-.hero__title { margin-bottom: 16px; }
+.hero__title {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.06;
+  max-width: 16ch;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 
 .hero__subtitle {
   font-size: 0.98rem;
