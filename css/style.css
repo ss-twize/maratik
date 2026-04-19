@@ -107,14 +107,17 @@ section:not(.hero) { padding: var(--section-padding); }
   display: flex;
   align-items: center;
   gap: 24px;
-  height: 64px;
+  min-height: 72px;
 }
 
 .site-header__logo {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-text);
+  line-height: 1;
   flex-shrink: 0;
 }
 
@@ -123,13 +126,12 @@ section:not(.hero) { padding: var(--section-padding); }
   align-items: center;
   gap: 24px;
   margin-left: auto;
-  height: 100%;
+  align-self: center;
 }
 
 .site-header__nav a {
   display: inline-flex;
   align-items: center;
-  height: 100%;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-text-secondary);
@@ -140,10 +142,13 @@ section:not(.hero) { padding: var(--section-padding); }
 .site-header__nav a:hover { color: var(--color-accent); }
 
 .site-header__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 22px;
   font-size: 0.9rem;
   flex-shrink: 0;
-  align-self: center;
+  line-height: 1;
 }
 
 @media (max-width: 768px) {
