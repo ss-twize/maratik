@@ -189,7 +189,7 @@ section:not(.hero) { padding: var(--section-padding); }
 
 .hero__title {
   margin-bottom: 16px;
-  font-size: clamp(1.65rem, 5.2vw, 4rem);
+  font-size: clamp(1.5rem, 4.6vw, 3.4rem);
   line-height: 1.08;
   max-width: 18ch;
   text-wrap: balance;
@@ -698,7 +698,7 @@ section:not(.hero) { padding: var(--section-padding); }
 
   h1 { font-size: 1.85rem; }
   .hero__title {
-    font-size: clamp(1.45rem, 8.8vw, 2.1rem);
+    font-size: clamp(1.3rem, 7.6vw, 1.85rem);
     max-width: 20ch;
   }
   h2 { font-size: 1.4rem; }
