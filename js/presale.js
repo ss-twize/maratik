@@ -133,6 +133,7 @@ form.addEventListener('submit', async e => {
     firstname: document.getElementById('lf-firstname').value.trim(),
     lastname:  document.getElementById('lf-lastname').value.trim(),
     phone:     phoneDigits(),
+    email:     document.getElementById('lf-email').value.trim(),
     product:   document.getElementById('lf-product').value,
     size:      document.getElementById('lf-size').value,
     quantity:  document.getElementById('lf-qty').value
