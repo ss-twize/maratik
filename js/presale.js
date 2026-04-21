@@ -61,10 +61,42 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && !overlay.hidden) closePopup();
 });
 
+// ─── Phone formatting ─────────────────────────────────────────────────────────
+const phoneInput = document.getElementById('lf-phone');
+
+phoneInput.addEventListener('focus', function () {
+  if (!this.value) this.value = '+7 ';
+});
+
+phoneInput.addEventListener('blur', function () {
+  if (this.value === '+7 ' || this.value === '+7') this.value = '';
+});
+
+phoneInput.addEventListener('input', function () {
+  let digits = this.value.replace(/\D/g, '');
+  if (digits.startsWith('8')) digits = '7' + digits.slice(1);
+  if (!digits.startsWith('7')) digits = '7' + digits;
+  digits = digits.slice(0, 11);
+
+  let out = '+7';
+  if (digits.length > 1) out += ' ' + digits.slice(1, 4);
+  if (digits.length > 4) out += ' ' + digits.slice(4, 7);
+  if (digits.length > 7) out += ' ' + digits.slice(7, 9);
+  if (digits.length > 9) out += ' ' + digits.slice(9, 11);
+
+  this.value = out;
+  this.selectionStart = this.selectionEnd = out.length;
+});
+
+function phoneDigits() {
+  return phoneInput.value.replace(/\D/g, '');
+}
+
 // ─── Validation ──────────────────────────────────────────────────────────────
 function validateForm() {
   let valid = true;
   form.querySelectorAll('[required]').forEach(el => {
+    if (el === phoneInput) return; // handled separately below
     if (!el.value.trim()) {
       el.classList.add('invalid');
       valid = false;
@@ -72,6 +104,15 @@ function validateForm() {
       el.classList.remove('invalid');
     }
   });
+
+  const digits = phoneDigits();
+  if (digits.length !== 11 || !digits.startsWith('7')) {
+    phoneInput.classList.add('invalid');
+    valid = false;
+  } else {
+    phoneInput.classList.remove('invalid');
+  }
+
   return valid;
 }
 
@@ -91,7 +132,7 @@ form.addEventListener('submit', async e => {
   const payload = {
     firstname: document.getElementById('lf-firstname').value.trim(),
     lastname:  document.getElementById('lf-lastname').value.trim(),
-    phone:     document.getElementById('lf-phone').value.trim(),
+    phone:     phoneDigits(),
     product:   document.getElementById('lf-product').value,
     size:      document.getElementById('lf-size').value,
     quantity:  document.getElementById('lf-qty').value
