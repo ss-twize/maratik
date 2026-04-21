@@ -131,7 +131,6 @@ form.addEventListener('submit', async e => {
 
   const payload = {
     firstname: document.getElementById('lf-firstname').value.trim(),
-    lastname:  document.getElementById('lf-lastname').value.trim(),
     phone:     phoneDigits(),
     email:     document.getElementById('lf-email').value.trim(),
     product:   document.getElementById('lf-product').value,
