@@ -7,21 +7,21 @@ const LINKS = {
     avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
     vk:       '#',
     telegram: 'https://t.me/m/W9zx72orYzky',
-    whatsapp: '#',
+    whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать высокие сапоги. Подскажите по наличию и размеру.')
   },
   boots_low: {
     avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
     vk:       '#',
     telegram: 'https://t.me/m/AzLmKnLDNGZi',
-    whatsapp: '#',
+    whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать низкие сапоги. Подскажите по наличию и размеру.')
   },
   crocs: {
     avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
     vk:       '#',
     telegram: 'https://t.me/m/l15KB1SHMzMy',
-    whatsapp: '#',
+    whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать кроксы. Подскажите по наличию и размеру.')
   }
 };
@@ -107,8 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // populate level 2 links
     vkBtn.href = cfg.vk;
     tgBtn.href = cfg.telegram + '?text=' + cfg.message;
-    const waPhone = cfg.whatsapp.replace(/\D/g, '');
-    waBtn.href = waPhone ? 'https://wa.me/' + waPhone + '?text=' + cfg.message : '#';
+    waBtn.href = cfg.whatsapp !== '#' ? cfg.whatsapp : '#';
 
     vkBtn.onclick = () => trackEvent('buy_vk_' + productKey);
     tgBtn.onclick = () => trackEvent('buy_tg_' + productKey);
