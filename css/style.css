@@ -694,6 +694,79 @@ section:not(.hero) { padding: var(--section-padding); }
 .popup__btn-wa  { background: #25D366; }
 .popup__btn-wa:hover  { background: #1DAE52; }
 
+/* ── LEAD FORM ───────────────────────────────────────────────── */
+.popup--form { max-width: 480px; }
+
+.lead-form { display: flex; flex-direction: column; gap: 14px; }
+
+.lead-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.lead-form__field { display: flex; flex-direction: column; gap: 5px; }
+
+.lead-form__field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.lead-form__field label span { color: var(--color-accent); }
+
+.lead-form__field input,
+.lead-form__field select {
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lead-form__field input:focus,
+.lead-form__field select:focus { border-color: var(--color-accent); }
+
+.lead-form__field input.invalid,
+.lead-form__field select.invalid { border-color: #d9534f; }
+
+.lead-form__error {
+  font-size: 0.85rem;
+  color: #d9534f;
+  margin: 0;
+}
+
+.lead-form__submit { width: 100%; margin-top: 4px; }
+
+.lead-form__submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.lead-form__legal {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0;
+}
+
+.lead-form__legal a { color: var(--color-accent); }
+
+.lead-form__success { text-align: center; padding: 24px 0; }
+
+.lead-form__success-icon {
+  font-size: 2.5rem;
+  color: #2ecc71;
+  margin: 0 0 12px;
+}
+
+.lead-form__success h4 { font-size: 1.2rem; margin-bottom: 8px; }
+
+.lead-form__success p { color: var(--color-text-secondary); font-size: 0.95rem; }
+
+@media (max-width: 400px) {
+  .lead-form__row { grid-template-columns: 1fr; }
+}
+
 /* ── MOBILE FINAL PASS ───────────────────────────────────────── */
 @media (max-width: 480px) {
   :root { --section-padding: 52px 20px; }

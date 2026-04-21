@@ -78,6 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─── POPUP ───────────────────────────────────────────────────────────────────
+  // Guard: skipped in pre-sale branch (presale.js handles popup instead)
+  if (!document.getElementById('popupLevel1')) return;
+
   const popup        = document.getElementById('buyPopup');
   const level1       = document.getElementById('popupLevel1');
   const level2       = document.getElementById('popupLevel2');

@@ -280,37 +280,65 @@
   </div>
 </footer>
   <!-- BUY POPUP -->
-<div class="popup-overlay" id="buyPopup" role="dialog" aria-modal="true" aria-label="Купить товар" hidden>
-  <div class="popup">
+<div class="popup-overlay" id="buyPopup" role="dialog" aria-modal="true" aria-label="Оставить заявку" hidden>
+  <div class="popup popup--form">
     <button class="popup__close" id="popupClose" aria-label="Закрыть">&#10005;</button>
+    <h3 class="popup__title">Оставьте заявку</h3>
+    <p class="popup__subtitle">Мы свяжемся с вами и поможем оформить заказ</p>
 
-    <!-- Level 1 -->
-    <div class="popup__level" id="popupLevel1">
-      <h3 class="popup__title">Как хотите заказать?</h3>
-      <p class="popup__subtitle" id="popupProductName"></p>
-      <div class="popup__actions">
-        <button class="btn popup__btn-avito" id="popupAvitoBtn">
-          Заказать на Авито
-        </button>
-        <button class="btn btn--ghost popup__btn-manager" id="popupManagerBtn">
-          Заказать через менеджера
-        </button>
+    <form class="lead-form" id="leadForm" novalidate>
+      <div class="lead-form__row">
+        <div class="lead-form__field">
+          <label for="lf-firstname">Имя <span aria-hidden="true">*</span></label>
+          <input type="text" id="lf-firstname" name="firstname" placeholder="Иван" required autocomplete="given-name">
+        </div>
+        <div class="lead-form__field">
+          <label for="lf-lastname">Фамилия <span aria-hidden="true">*</span></label>
+          <input type="text" id="lf-lastname" name="lastname" placeholder="Иванов" required autocomplete="family-name">
+        </div>
       </div>
-    </div>
 
-    <!-- Level 2 -->
-    <div class="popup__level popup__level--hidden" id="popupLevel2">
-      <button class="popup__back" id="popupBack">&#8592; Назад</button>
-      <h3 class="popup__title">Выберите мессенджер</h3>
-      <p class="popup__subtitle">Мы ответим и поможем оформить заказ</p>
-      <div class="popup__actions popup__actions--column">
-        <a class="btn popup__btn-vk" id="popupVkBtn" target="_blank" rel="noopener">ВКонтакте</a>
-        <a class="btn popup__btn-tg" id="popupTgBtn" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn popup__btn-wa" id="popupWaBtn" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="lead-form__field">
+        <label for="lf-phone">Телефон <span aria-hidden="true">*</span></label>
+        <input type="tel" id="lf-phone" name="phone" placeholder="+7 900 000-00-00" required autocomplete="tel">
       </div>
+
+      <div class="lead-form__field">
+        <label for="lf-product">Желаемый товар <span aria-hidden="true">*</span></label>
+        <select id="lf-product" name="product" required>
+          <option value="">— Выберите модель —</option>
+          <option value="Высокие сапоги">Высокие сапоги — 6 490 ₽</option>
+          <option value="Низкие сапоги">Низкие сапоги — 3 990 ₽</option>
+          <option value="Кроксы">Кроксы — 2 490 ₽</option>
+        </select>
+      </div>
+
+      <div class="lead-form__row">
+        <div class="lead-form__field">
+          <label for="lf-size">Размер <span aria-hidden="true">*</span></label>
+          <input type="number" id="lf-size" name="size" placeholder="42" min="36" max="46" required>
+        </div>
+        <div class="lead-form__field">
+          <label for="lf-qty">Количество <span aria-hidden="true">*</span></label>
+          <input type="number" id="lf-qty" name="quantity" placeholder="1" min="1" max="99" value="1" required>
+        </div>
+      </div>
+
+      <p class="lead-form__error" id="lfError" hidden></p>
+
+      <button type="submit" class="btn lead-form__submit" id="lfSubmit">Отправить заявку</button>
+
+      <p class="lead-form__legal">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></p>
+    </form>
+
+    <div class="lead-form__success" id="lfSuccess" hidden>
+      <p class="lead-form__success-icon">✓</p>
+      <h4>Заявка отправлена!</h4>
+      <p>Мы свяжемся с вами в ближайшее время.</p>
     </div>
   </div>
 </div>
   <script src="js/main.js"></script>
+  <script src="js/presale.js"></script>
 </body>
 </html>
