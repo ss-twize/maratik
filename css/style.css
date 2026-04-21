@@ -596,6 +596,8 @@ section:not(.hero) { padding: var(--section-padding); }
 
 .site-footer__copy { font-size: 0.8rem; margin: 0; color: rgba(255,255,255,0.4); }
 
+.site-footer__disclaimer { font-size: 0.75rem; margin: 4px 0 0; color: rgba(255,255,255,0.35); line-height: 1.5; max-width: 480px; }
+
 /* ── POPUP ───────────────────────────────────────────────────── */
 .popup-overlay[hidden] { display: none !important; }
 
