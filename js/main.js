@@ -4,21 +4,21 @@
 // Replace all # values with real URLs before going live.
 const LINKS = {
   boots_high: {
-    avito:    '#',
+    avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
     vk:       '#',
     telegram: '#',
     whatsapp: '#',
     message:  encodeURIComponent('Здравствуйте, хочу заказать высокие сапоги. Подскажите по наличию и размеру.')
   },
   boots_low: {
-    avito:    '#',
+    avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
     vk:       '#',
     telegram: '#',
     whatsapp: '#',
     message:  encodeURIComponent('Здравствуйте, хочу заказать низкие сапоги. Подскажите по наличию и размеру.')
   },
   crocs: {
-    avito:    '#',
+    avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
     vk:       '#',
     telegram: '#',
     whatsapp: '#',
