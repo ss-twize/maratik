@@ -1,7 +1,7 @@
 // js/presale.js — pre-sale branch only
 // Replaces the two-level buy popup with a lead collection form.
 
-const WEBHOOK_URL = 'https://n8n.srv1090249.hstgr.cloud/webhook-test/prelaunch-lead';
+const WEBHOOK_URL = 'https://n8n.srv1090249.hstgr.cloud/webhook/prelaunch-lead';
 
 const PRODUCT_MAP = {
   boots_high: 'Высокие сапоги',
