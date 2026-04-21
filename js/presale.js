@@ -106,7 +106,7 @@ function validateForm() {
   });
 
   const digits = phoneDigits();
-  if (digits.length !== 11 || !digits.startsWith('7')) {
+  if (digits.length > 1 && (digits.length !== 11 || !digits.startsWith('7'))) {
     phoneInput.classList.add('invalid');
     valid = false;
   } else {
