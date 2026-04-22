@@ -3,6 +3,19 @@
 
 const WEBHOOK_URL = 'https://n8n.srv1090249.hstgr.cloud/webhook/prelaunch-lead';
 
+const CONSENT_VERSION = 'privacy-v1.0-2026-04-22';
+
+function getVisitorId() {
+  let id = localStorage.getItem('visitor_id');
+  if (!id) {
+    id = crypto.randomUUID
+      ? crypto.randomUUID()
+      : Date.now().toString(36) + Math.random().toString(36).slice(2);
+    localStorage.setItem('visitor_id', id);
+  }
+  return id;
+}
+
 const PRODUCT_MAP = {
   boots_high: 'Высокие сапоги',
   boots_low:  'Низкие сапоги',
@@ -92,11 +105,14 @@ function phoneDigits() {
   return phoneInput.value.replace(/\D/g, '');
 }
 
+const consentBox = document.getElementById('lfConsentBox');
+const consentCheck = document.getElementById('lf-consent');
+
 // ─── Validation ──────────────────────────────────────────────────────────────
 function validateForm() {
   let valid = true;
   form.querySelectorAll('[required]').forEach(el => {
-    if (el === phoneInput) return; // handled separately below
+    if (el === phoneInput || el === consentCheck) return;
     if (!el.value.trim()) {
       el.classList.add('invalid');
       valid = false;
@@ -111,6 +127,13 @@ function validateForm() {
     valid = false;
   } else {
     phoneInput.classList.remove('invalid');
+  }
+
+  if (!consentCheck.checked) {
+    consentBox.classList.add('lead-form__consent--invalid');
+    valid = false;
+  } else {
+    consentBox.classList.remove('lead-form__consent--invalid');
   }
 
   return valid;
@@ -130,12 +153,16 @@ form.addEventListener('submit', async e => {
   hideError();
 
   const payload = {
-    firstname: document.getElementById('lf-firstname').value.trim(),
-    phone:     phoneDigits(),
-    email:     document.getElementById('lf-email').value.trim(),
-    product:   document.getElementById('lf-product').value,
-    size:      document.getElementById('lf-size').value,
-    quantity:  document.getElementById('lf-qty').value
+    firstname:       document.getElementById('lf-firstname').value.trim(),
+    phone:           phoneDigits(),
+    email:           document.getElementById('lf-email').value.trim(),
+    product:         document.getElementById('lf-product').value,
+    size:            document.getElementById('lf-size').value,
+    quantity:        document.getElementById('lf-qty').value,
+    consent_ts:      new Date().toISOString(),
+    consent_version: CONSENT_VERSION,
+    consent_ua:      navigator.userAgent,
+    visitor_id:      getVisitorId()
   };
 
   try {
@@ -168,7 +195,14 @@ function hideError() {
   errorEl.setAttribute('hidden', '');
 }
 
-// Clear invalid state on input
+// Clear invalid state on input / change
 form.querySelectorAll('[required]').forEach(el => {
-  el.addEventListener('input', () => el.classList.remove('invalid'));
+  const ev = el.type === 'checkbox' ? 'change' : 'input';
+  el.addEventListener(ev, () => {
+    if (el === consentCheck) {
+      consentBox.classList.remove('lead-form__consent--invalid');
+    } else {
+      el.classList.remove('invalid');
+    }
+  });
 });

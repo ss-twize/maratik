@@ -38,6 +38,16 @@ function trackEvent(name) {
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Maratik ready');
 
+  // ─── COOKIE BANNER ───────────────────────────────────────────────────────────
+  const cookieBanner = document.getElementById('cookieBanner');
+  if (cookieBanner && !localStorage.getItem('cookie_accepted')) {
+    cookieBanner.removeAttribute('hidden');
+    document.getElementById('cookieAccept').addEventListener('click', () => {
+      localStorage.setItem('cookie_accepted', '1');
+      cookieBanner.setAttribute('hidden', '');
+    });
+  }
+
   // ─── SLIDERS ─────────────────────────────────────────────────────────────────
   document.querySelectorAll('[data-slider]').forEach(slider => {
     const slides = slider.querySelector('.product-card__slides');

@@ -325,9 +325,15 @@
 
       <p class="lead-form__error" id="lfError" hidden></p>
 
-      <button type="submit" class="btn lead-form__submit" id="lfSubmit">Отправить заявку</button>
+      <div class="lead-form__consent" id="lfConsentBox">
+        <input type="checkbox" id="lf-consent" name="consent" required>
+        <label for="lf-consent" class="lead-form__consent-text">
+          Я соглашаюсь на обработку персональных данных в соответствии с
+          <a href="privacy.html" target="_blank">Политикой конфиденциальности</a>
+        </label>
+      </div>
 
-      <p class="lead-form__legal">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></p>
+      <button type="submit" class="btn lead-form__submit" id="lfSubmit">Отправить заявку</button>
     </form>
 
     <div class="lead-form__success" id="lfSuccess" hidden>
@@ -337,6 +343,15 @@
     </div>
   </div>
 </div>
+  <div id="cookieBanner" class="cookie-banner" hidden>
+    <p class="cookie-banner__text">
+      Мы используем cookie и Яндекс.Метрику для работы сайта и анализа посещаемости.
+      Продолжая пользоваться сайтом, вы соглашаетесь с обработкой данных в соответствии с
+      <a href="privacy.html">Политикой конфиденциальности</a>.
+    </p>
+    <button id="cookieAccept" class="cookie-banner__btn">Принять</button>
+  </div>
+
   <script src="js/main.js"></script>
   <script src="js/presale.js"></script>
 </body>
