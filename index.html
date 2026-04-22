@@ -56,7 +56,10 @@
   <main>
     <section class="hero" id="hero">
       <div class="hero__media">
-        <img src="assets/images/hero-marat.png" alt="Марат Деев — рыболов-спортсмен" class="hero__img" loading="eager">
+        <picture>
+          <source srcset="assets/images/hero-marat.webp" type="image/webp">
+          <img src="assets/images/hero-marat.jpg" alt="Марат Деев — рыболов-спортсмен" class="hero__img" loading="eager">
+        </picture>
       </div>
       <div class="hero__content container">
         <span class="section-label">Лимитированная серия</span>
@@ -74,7 +77,10 @@
     <section class="about" id="about">
       <div class="container about__inner">
         <div class="about__photos">
-          <img src="assets/images/marat-deev-photo.jpg" alt="Марат Деев" class="about__photo" loading="lazy">
+          <picture>
+            <source srcset="assets/images/marat-deev-photo.webp" type="image/webp">
+            <img src="assets/images/marat-deev-photo.jpg" alt="Марат Деев" class="about__photo" loading="lazy">
+          </picture>
         </div>
         <div class="about__content">
           <span class="section-label">О Марате</span>
@@ -107,15 +113,32 @@
       <article class="product-card" data-product="boots_high">
         <div class="product-card__slider" data-slider>
           <div class="product-card__slides">
-            <img src="assets/images/sapog_pair.png" alt="Высокие сапоги — пара" loading="lazy">
-            <img src="assets/images/sapog_high_right.png" alt="Высокие сапоги — вид сбоку" loading="lazy">
-            <img src="assets/images/sapog_high_sole.png" alt="Высокие сапоги — подошва" loading="lazy">
+            <picture>
+              <source srcset="assets/images/sapog_pair.webp" type="image/webp">
+              <img src="assets/images/sapog_pair.png" alt="Высокие сапоги — пара" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/sapog_high_right.webp" type="image/webp">
+              <img src="assets/images/sapog_high_right.png" alt="Высокие сапоги — вид сбоку" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/sapog_high_sole.webp" type="image/webp">
+              <img src="assets/images/sapog_high_sole.png" alt="Высокие сапоги — подошва" loading="lazy">
+            </picture>
           </div>
           <button class="product-card__slider-btn product-card__slider-btn--prev" aria-label="Предыдущее фото">&#8249;</button>
           <button class="product-card__slider-btn product-card__slider-btn--next" aria-label="Следующее фото">&#8250;</button>
           <div class="product-card__dots"></div>
         </div>
         <div class="product-card__body">
+          <div class="product-counter">
+            <div class="product-counter__row">
+              <span class="product-counter__live">В наличии</span>
+              <span class="product-counter__urgent">⚡ Осталось всего 13!</span>
+            </div>
+            <div class="product-counter__label">🔥 Купили <strong>37</strong> из 50</div>
+            <div class="product-counter__bar"><div class="product-counter__fill" style="width:74%"></div></div>
+          </div>
           <div class="product-card__scenario">Максимум защиты</div>
           <h3 class="product-card__name">Высокие сапоги</h3>
           <div class="product-card__price">6&nbsp;490&nbsp;₽</div>
@@ -129,15 +152,32 @@
       <article class="product-card" data-product="boots_low">
         <div class="product-card__slider" data-slider>
           <div class="product-card__slides">
-            <img src="assets/images/9e265ef2-b90c-4427-9e8e-622b74bcb450.png" alt="Низкие сапоги" loading="lazy">
-            <img src="assets/images/sapog_high_sole-2.png" alt="Низкие сапоги — подошва" loading="lazy">
-            <img src="assets/images/sapog_low_nosok.png" alt="Низкие сапоги — носок" loading="lazy">
+            <picture>
+              <source srcset="assets/images/9e265ef2-b90c-4427-9e8e-622b74bcb450.webp" type="image/webp">
+              <img src="assets/images/9e265ef2-b90c-4427-9e8e-622b74bcb450.png" alt="Низкие сапоги" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/sapog_high_sole-2.webp" type="image/webp">
+              <img src="assets/images/sapog_high_sole-2.png" alt="Низкие сапоги — подошва" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/sapog_low_nosok.webp" type="image/webp">
+              <img src="assets/images/sapog_low_nosok.png" alt="Низкие сапоги — носок" loading="lazy">
+            </picture>
           </div>
           <button class="product-card__slider-btn product-card__slider-btn--prev" aria-label="Предыдущее фото">&#8249;</button>
           <button class="product-card__slider-btn product-card__slider-btn--next" aria-label="Следующее фото">&#8250;</button>
           <div class="product-card__dots"></div>
         </div>
         <div class="product-card__body">
+          <div class="product-counter">
+            <div class="product-counter__row">
+              <span class="product-counter__live">В наличии</span>
+              <span class="product-counter__urgent">⚡ Осталось 21!</span>
+            </div>
+            <div class="product-counter__label">🔥 Купили <strong>29</strong> из 50</div>
+            <div class="product-counter__bar"><div class="product-counter__fill" style="width:58%"></div></div>
+          </div>
           <div class="product-card__scenario">Универсальный выбор</div>
           <h3 class="product-card__name">Низкие сапоги</h3>
           <div class="product-card__price">3&nbsp;990&nbsp;₽</div>
@@ -151,19 +191,48 @@
       <article class="product-card" data-product="crocs">
         <div class="product-card__slider" data-slider>
           <div class="product-card__slides">
-            <img src="assets/images/crocs-1.png" alt="Кроксы — боковой ракурс" loading="lazy">
-            <img src="assets/images/crocs-2.png" alt="Кроксы — ракурс спереди" loading="lazy">
-            <img src="assets/images/crocs-3.png" alt="Кроксы — подошва" loading="lazy">
-            <img src="assets/images/crocs-4.png" alt="Кроксы — вид сзади" loading="lazy">
-            <img src="assets/images/crocs-5.png" alt="Кроксы — вид сверху" loading="lazy">
-            <img src="assets/images/crocs-6.png" alt="Кроксы — правый бок" loading="lazy">
-            <img src="assets/images/crocs-7.png" alt="Кроксы — ракурс 3/4" loading="lazy">
+            <picture>
+              <source srcset="assets/images/crocs-1.webp" type="image/webp">
+              <img src="assets/images/crocs-1.png" alt="Кроксы — боковой ракурс" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/crocs-2.webp" type="image/webp">
+              <img src="assets/images/crocs-2.png" alt="Кроксы — ракурс спереди" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/crocs-3.webp" type="image/webp">
+              <img src="assets/images/crocs-3.png" alt="Кроксы — подошва" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/crocs-4.webp" type="image/webp">
+              <img src="assets/images/crocs-4.png" alt="Кроксы — вид сзади" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/crocs-5.webp" type="image/webp">
+              <img src="assets/images/crocs-5.png" alt="Кроксы — вид сверху" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/crocs-6.webp" type="image/webp">
+              <img src="assets/images/crocs-6.png" alt="Кроксы — правый бок" loading="lazy">
+            </picture>
+            <picture>
+              <source srcset="assets/images/crocs-7.webp" type="image/webp">
+              <img src="assets/images/crocs-7.png" alt="Кроксы — ракурс 3/4" loading="lazy">
+            </picture>
           </div>
           <button class="product-card__slider-btn product-card__slider-btn--prev" aria-label="Предыдущее фото">&#8249;</button>
           <button class="product-card__slider-btn product-card__slider-btn--next" aria-label="Следующее фото">&#8250;</button>
           <div class="product-card__dots"></div>
         </div>
         <div class="product-card__body">
+          <div class="product-counter">
+            <div class="product-counter__row">
+              <span class="product-counter__live">В наличии</span>
+              <span class="product-counter__urgent">⚡ Осталось 24!</span>
+            </div>
+            <div class="product-counter__label">🔥 Купили <strong>26</strong> из 50</div>
+            <div class="product-counter__bar"><div class="product-counter__fill" style="width:52%"></div></div>
+          </div>
           <div class="product-card__scenario">На теплую погоду</div>
           <h3 class="product-card__name">Кроксы</h3>
           <div class="product-card__price">1&nbsp;990&nbsp;₽</div>
@@ -280,79 +349,37 @@
   </div>
 </footer>
   <!-- BUY POPUP -->
-<div class="popup-overlay" id="buyPopup" role="dialog" aria-modal="true" aria-label="Оставить заявку" hidden>
-  <div class="popup popup--form">
+<div class="popup-overlay" id="buyPopup" role="dialog" aria-modal="true" aria-label="Купить товар" hidden>
+  <div class="popup">
     <button class="popup__close" id="popupClose" aria-label="Закрыть">&#10005;</button>
-    <h3 class="popup__title">Оставьте заявку</h3>
-    <p class="popup__subtitle">Мы свяжемся с вами и поможем оформить заказ</p>
 
-    <form class="lead-form" id="leadForm" novalidate>
-      <div class="lead-form__field">
-        <label for="lf-firstname">Имя <span aria-hidden="true">*</span></label>
-        <input type="text" id="lf-firstname" name="firstname" placeholder="Иван" required autocomplete="given-name">
+    <!-- Level 1 -->
+    <div class="popup__level" id="popupLevel1">
+      <h3 class="popup__title">Как хотите заказать?</h3>
+      <p class="popup__subtitle" id="popupProductName"></p>
+      <div class="popup__actions">
+        <button class="btn popup__btn-avito" id="popupAvitoBtn">
+          Заказать на Авито
+        </button>
+        <button class="btn btn--ghost popup__btn-manager" id="popupManagerBtn">
+          Заказать через менеджера
+        </button>
       </div>
+    </div>
 
-      <div class="lead-form__field">
-        <label for="lf-phone">Телефон <span aria-hidden="true">*</span></label>
-        <input type="tel" id="lf-phone" name="phone" placeholder="+7 900 000-00-00" autocomplete="tel">
+    <!-- Level 2 -->
+    <div class="popup__level popup__level--hidden" id="popupLevel2">
+      <button class="popup__back" id="popupBack">&#8592; Назад</button>
+      <h3 class="popup__title">Выберите мессенджер</h3>
+      <p class="popup__subtitle">Мы ответим и поможем оформить заказ</p>
+      <div class="popup__actions popup__actions--column">
+        <a class="btn popup__btn-vk" id="popupVkBtn" target="_blank" rel="noopener">ВКонтакте</a>
+        <a class="btn popup__btn-tg" id="popupTgBtn" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn popup__btn-wa" id="popupWaBtn" target="_blank" rel="noopener">WhatsApp</a>
       </div>
-
-      <div class="lead-form__field">
-        <label for="lf-email">Email <span aria-hidden="true">*</span></label>
-        <input type="email" id="lf-email" name="email" placeholder="example@mail.ru" required autocomplete="email">
-      </div>
-
-      <div class="lead-form__field">
-        <label for="lf-product">Желаемый товар <span aria-hidden="true">*</span></label>
-        <select id="lf-product" name="product" required>
-          <option value="">— Выберите модель —</option>
-          <option value="Высокие сапоги">Высокие сапоги — 6 490 ₽</option>
-          <option value="Низкие сапоги">Низкие сапоги — 3 990 ₽</option>
-          <option value="Кроксы">Кроксы — 2 490 ₽</option>
-        </select>
-      </div>
-
-      <div class="lead-form__row">
-        <div class="lead-form__field">
-          <label for="lf-size">Размер <span aria-hidden="true">*</span></label>
-          <input type="number" id="lf-size" name="size" placeholder="42" min="36" max="46" required>
-        </div>
-        <div class="lead-form__field">
-          <label for="lf-qty">Количество <span aria-hidden="true">*</span></label>
-          <input type="number" id="lf-qty" name="quantity" placeholder="1" min="1" max="99" value="1" required>
-        </div>
-      </div>
-
-      <p class="lead-form__error" id="lfError" hidden></p>
-
-      <div class="lead-form__consent" id="lfConsentBox">
-        <input type="checkbox" id="lf-consent" name="consent" required>
-        <label for="lf-consent" class="lead-form__consent-text">
-          Я соглашаюсь на обработку персональных данных в соответствии с
-          <a href="privacy.html" target="_blank">Политикой конфиденциальности</a>
-        </label>
-      </div>
-
-      <button type="submit" class="btn lead-form__submit" id="lfSubmit">Отправить заявку</button>
-    </form>
-
-    <div class="lead-form__success" id="lfSuccess" hidden>
-      <p class="lead-form__success-icon">✓</p>
-      <h4>Заявка отправлена!</h4>
-      <p>Продажи начнутся 25 апреля в 20:00 по Москве и мы сразу сообщим Вам об этом!</p>
     </div>
   </div>
 </div>
-  <div id="cookieBanner" class="cookie-banner" hidden>
-    <p class="cookie-banner__text">
-      Мы используем cookie и Яндекс.Метрику для работы сайта и анализа посещаемости.
-      Продолжая пользоваться сайтом, вы соглашаетесь с обработкой данных в соответствии с
-      <a href="privacy.html">Политикой конфиденциальности</a>.
-    </p>
-    <button id="cookieAccept" class="cookie-banner__btn">Принять</button>
-  </div>
-
   <script src="js/main.js"></script>
-  <script src="js/presale.js"></script>
 </body>
 </html>
