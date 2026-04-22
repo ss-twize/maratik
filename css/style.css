@@ -809,10 +809,3 @@ button, a, summary { min-height: 44px; }
   from { width: 0 !important; }
 }
 
-/* picture as flex child in sliders */
-.product-card__slides picture {
-  min-width: 100%;
-  flex-shrink: 0;
-  display: block;
-  height: 100%;
-}
