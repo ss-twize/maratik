@@ -4,21 +4,21 @@
 // Replace all # values with real URLs before going live.
 const LINKS = {
   boots_high: {
-    avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
+    avito:    'https://www.avito.ru/moskva/odezhda_obuv_aksessuary/vysokie_sapogi_8089292223',
     vk:       'https://vk.com/market/product/vysokie-sapogi-113803383-14250931',
     telegram: 'https://t.me/m/W9zx72orYzky',
     whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать высокие сапоги. Подскажите по наличию и размеру.')
   },
   boots_low: {
-    avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
+    avito:    'https://www.avito.ru/moskva/odezhda_obuv_aksessuary/nizkie_sapogi_8089098214',
     vk:       'https://vk.com/market/product/nizkie-sapogi-113803383-14250964',
     telegram: 'https://t.me/m/AzLmKnLDNGZi',
     whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать низкие сапоги. Подскажите по наличию и размеру.')
   },
   crocs: {
-    avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
+    avito:    'https://www.avito.ru/moskva/odezhda_obuv_aksessuary/kroksy_8089773960',
     vk:       'https://vk.com/market/product/kroxy-113803383-14250920',
     telegram: 'https://t.me/m/l15KB1SHMzMy',
     whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
@@ -37,16 +37,6 @@ function trackEvent(name) {
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Maratik ready');
-
-  // ─── COOKIE BANNER ───────────────────────────────────────────────────────────
-  const cookieBanner = document.getElementById('cookieBanner');
-  if (cookieBanner && !localStorage.getItem('cookie_accepted')) {
-    cookieBanner.removeAttribute('hidden');
-    document.getElementById('cookieAccept').addEventListener('click', () => {
-      localStorage.setItem('cookie_accepted', '1');
-      cookieBanner.setAttribute('hidden', '');
-    });
-  }
 
   // ─── SLIDERS ─────────────────────────────────────────────────────────────────
   document.querySelectorAll('[data-slider]').forEach(slider => {
@@ -88,9 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─── POPUP ───────────────────────────────────────────────────────────────────
-  // Guard: skipped in pre-sale branch (presale.js handles popup instead)
-  if (!document.getElementById('popupLevel1')) return;
-
   const popup        = document.getElementById('buyPopup');
   const level1       = document.getElementById('popupLevel1');
   const level2       = document.getElementById('popupLevel2');
