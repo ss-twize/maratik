@@ -5,21 +5,21 @@
 const LINKS = {
   boots_high: {
     avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
-    vk:       '#',
+    vk:       'https://vk.com/market/product/vysokie-sapogi-113803383-14250931',
     telegram: 'https://t.me/m/W9zx72orYzky',
     whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать высокие сапоги. Подскажите по наличию и размеру.')
   },
   boots_low: {
     avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
-    vk:       '#',
+    vk:       'https://vk.com/market/product/nizkie-sapogi-113803383-14250964',
     telegram: 'https://t.me/m/AzLmKnLDNGZi',
     whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать низкие сапоги. Подскажите по наличию и размеру.')
   },
   crocs: {
     avito:    'https://www.avito.ru/user/d1312dba9f867863284f72542d74139f/profile',
-    vk:       '#',
+    vk:       'https://vk.com/market/product/kroxy-113803383-14250920',
     telegram: 'https://t.me/m/l15KB1SHMzMy',
     whatsapp: 'https://wa.me/message/BAR3PPFJCKX5M1',
     message:  encodeURIComponent('Здравствуйте, хочу заказать кроксы. Подскажите по наличию и размеру.')
